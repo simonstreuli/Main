@@ -4,6 +4,9 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const helmet = require("helmet");
 const morgan = require("morgan");
+const authRoute = require("./routes/auth");
+const postRoute = require("./routes/posts");
+const path = require("path");
 
 dotenv.config();
 
@@ -17,3 +20,10 @@ mongoose
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
   })
   .catch((error) => console.log(`${error} did not connect`));
+
+app.use(express.json());
+app.use(helmet());
+app.use(morgan("common"));
+
+app.use("/api/auth", authRoute);
+app.use("/api/posts", postRoute);
