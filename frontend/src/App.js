@@ -18,6 +18,7 @@ function App() {
           path="/register"
           element={user ? <Navigate to="/" /> : <Register />}
         />
+        <Route path="/explore" element={user ? <Explore /> : <Register />} />
         <Route path="/profile/:username" element={<Profile />} />
       </Routes>
     </BrowserRouter>
