@@ -4,6 +4,7 @@ import Login from "./pages/login/Login";
 import Profile from "./pages/profile/Profile";
 import Register from "./pages/register/Register";
 import { AuthContext } from "./context/AuthContext";
+import Explore from "./pages/explore/Explore";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 function App() {
